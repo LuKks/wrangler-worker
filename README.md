@@ -11,7 +11,9 @@ npm i wrangler-worker
 ```js
 const wranglerWorker = require('wrangler-worker')
 
-const worker = await wranglerWorker()
+const worker = await wranglerWorker({
+  filename: './worker.mjs'
+})
 
 const response = await worker.fetch('/')
 
@@ -19,21 +21,6 @@ console.log(await response.json())
 // => 'Hello World!'
 
 await worker.stop()
-```
-
-Testing
-
-```js
-const test = require('brittle')
-const wranglerWorker = require('wrangler-worker')
-
-test('basic', async function (t) {
-  const worker = await wranglerWorker({ t })
-
-  const response = await worker.fetch('/')
-
-  t.is(await response.json(), 'Hello World!')
-})
 ```
 
 ## API
