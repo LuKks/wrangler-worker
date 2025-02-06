@@ -1,7 +1,7 @@
 {
   "name": "wrangler-worker",
   "version": "0.0.0",
-  "description": "",
+  "description": "Start a HTTP Worker for E2E testing",
   "main": "index.js",
   "files": [],
   "scripts": {
